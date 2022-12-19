@@ -1,0 +1,141 @@
+@charset "UTF-8";
+
+/*	guestbook_select.jsp */
+
+#guest_iist{ /* container */
+	display: flex;
+	flex-direction: column;
+	
+}
+
+.frm_search>.search_zone{
+	text-align:center;
+	position:relative;
+}
+.frm_search>.search_zone>.icon{
+  position: absolute;
+  left:340px;
+  bottom:130px;
+  z-index: 1;
+  color:#63717f;
+
+}
+
+.frm_search input[type=search]{
+	width:60%;
+	height:60px;
+	border:none;
+	color:#63717f;
+	background-color:#2b303b;
+	border-radius:10px;
+	font-size: 1.5rem;
+	padding-left: 45px;
+}
+
+.frm_search input[type=button]{
+	box-shadow:0 0 0 1px #ebebeb inset, 0 0 0 2px rgba(255,255,255,0.15) inset, 0 8px 0 0 #adadad, 0 8px 0 1px rgba(0,0,0,0.4), 0 8px 8px 1px rgba(0,0,0,0.5);
+    background-color:#fff;
+    border:none;
+    border-radius:5px;
+    padding:10px;
+    width:80px;
+}
+
+
+.guest_items{
+	flex-basis:auto;
+	display:flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.guest_btn{
+	display : flex;
+	flex-basis:1;
+	justify-content: center;
+}
+
+.item{
+	width:40%;
+	height:100%;
+	margin: 20px 20px;
+	box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+	background-color:#ccc;
+	text-align:center;
+	padding:10px;
+}
+
+/* 암호를 입력받는 modal box ------- */
+#modal{
+	background-color: rgba(0,0,0,.3);
+	position :fixed;
+	left: 0;
+	top:0;
+	width:100%;
+	heigth:100%;
+	z-index: 100;
+	display: none;
+}
+
+#modal>#modal-content{
+	width:300px;
+	margin: 250px auto;
+	padding: 20px;
+	position: relative;
+	background-color: #fff;
+}
+
+#modal>#modal-content #btnClose{
+	position:absolute;
+	right: 2px;
+	top: 2px;
+	font-size: 2em;
+	background-color: transparent;
+	border:0;
+}
+
+
+/* guestbook_insert.jsp*/
+
+.guest_insert{
+	width: 40%;
+	margin: 20px auto;
+	box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+	
+}
+
+.frm>label{
+	padding:5px;
+	width:25%;
+	margin-bottom:10px;
+	display:inline-block;
+	font-size: 20pt;
+	font-weight:bold;
+}
+
+.frm>input{
+	width:60%;
+	height:30px;
+}
+
+.frm>textarea{
+	width:90%;
+	height:150px;
+	margin: 10px;
+
+}
+
+.frm input[type=button]{
+	background: #eee;
+	padding:10px;
+	width:18%;
+    border: none;
+    margin:10px;
+    cursor:pointer;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.frm>.updateZone{
+	visibility: hidden;
+}

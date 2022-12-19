@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.spring.bloom.mybatis.GuestbookMapper">
+	
+	<select id="totSize" parameterType="com.spring.bloom.guestbook.GPageVo" resultType="Integer">
+		SELECT count(id) FROM guestbook WHERE id LIKE '%${findStr}%'
+										  OR doc LIKE '%${findStr}%'
+								 		  OR nal LIKE '%${findStr}%'
+	</select>
+	
+	<select id="list" parameterType="com.spring.bloom.guestbook.GPageVo" resultType="com.spring.bloom.guestbook.GuestbookVo">
+		SELECT * FROM guestbook WHERE id LIKE '%${findStr}%'
+								  OR doc LIKE '%${findStr}%'
+								  OR nal LIKE '%${findStr}%'
+								ORDER BY nal DESC,id ASC
+								LIMIT #{startNo},#{listSize}
+	</select>
+	
+	<select id="listTen" resultType="com.spring.bloom.guestbook.GuestbookVo">
+		SELECT * FROM guestbook ORDER BY nal DESC,id ASC LIMIT 0,10
+	</select>
+	
+	<insert id="insert" parameterType="com.spring.bloom.guestbook.GuestbookVo">
+		INSERT INTO guestbook(id,pwd,nal,doc) 
+		VALUES(#{id},#{pwd},#{nal},#{doc})
+	</insert>
+	
+	<update id="update" parameterType="com.spring.bloom.guestbook.GuestbookVo">
+		UPDATE guestbook SET doc=#{doc} WHERE sno = #{sno} and pwd=#{pwd}
+	</update>
+	
+	<delete id="delete" parameterType="com.spring.bloom.guestbook.GuestbookVo">
+		DELETE FROM guestbook WHERE sno = #{sno} and pwd=#{pwd}
+	</delete>
+	
+	
+</mapper>
